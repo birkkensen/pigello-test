@@ -14,19 +14,13 @@ const solarSystemBodiesKey = "solar-system-bodies-key";
 
 export const useGetSolarSystemBodies = (options: HookProps) =>
   useQuery({
-    queryKey: [
-      solarSystemBodiesKey,
-      options?.limit,
-      options.order,
-      options?.direction,
-    ],
+    queryKey: [solarSystemBodiesKey, options.order, options.filter],
     queryFn: () =>
       getSolarSystemBodies({
-        limit: options?.limit,
         order: options.order,
-        direction: options?.direction,
+        filter: options.filter,
       }),
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: true,
     staleTime: 5 * 60 * 1000,
     ...options,
   });

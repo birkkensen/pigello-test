@@ -3,19 +3,17 @@ import qs from "query-string";
 
 export type Params = {
   order: string;
-  direction?: "asc" | "desc";
-  limit: number;
+  filter: string;
 };
 
 export const getSolarSystemBodies = async ({
-  limit,
   order,
-  direction = "asc",
+  filter,
 }: Params): Promise<Bodies> => {
   const query = qs.stringify(
     {
-      order: [order, direction],
-      page: [1, limit],
+      order,
+      filter: filter && ["bodyType", "eq", filter],
     },
     {
       arrayFormat: "comma",
