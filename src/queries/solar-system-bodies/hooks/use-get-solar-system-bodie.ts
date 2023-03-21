@@ -10,15 +10,21 @@ type HookProps = UseQueryOptions<
 > &
   Params;
 
-const solarSystemBodiesKey = "solar-system-bodies-key";
+export const solarSystemBodiesKey = "solar-system-bodies-key";
 
 export const useGetSolarSystemBodies = (options: HookProps) =>
   useQuery({
-    queryKey: [solarSystemBodiesKey, options.order, options.filter],
+    queryKey: [
+      solarSystemBodiesKey,
+      options.order,
+      options.filter,
+      options.direction,
+    ],
     queryFn: () =>
       getSolarSystemBodies({
         order: options.order,
         filter: options.filter,
+        direction: options.direction,
       }),
     refetchOnWindowFocus: true,
     staleTime: 5 * 60 * 1000,

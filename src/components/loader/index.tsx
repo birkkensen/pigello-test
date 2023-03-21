@@ -17,7 +17,6 @@ export const Loader = () => {
           fill="currentFill"
         />
       </svg>
-      <span className="sr-only">Loading...</span>
     </div>
   );
 };

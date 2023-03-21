@@ -1,6 +1,6 @@
 type Moon = {
   moon: string;
-  rel: string;
+  rel?: string;
 };
 
 type Mass = {
@@ -18,40 +18,40 @@ type AroundPlanet = {
   rel: string;
 };
 
-type Body = {
+export type Body = {
   id: string;
   name: string;
-  englishName: string;
-  isPlanet: true;
-  moons: Moon[];
-  semimajorAxis: number;
-  perihelion: number;
-  aphelion: number;
-  eccentricity: number;
-  inclination: number;
-  mass: Mass;
-  vol: Vol;
+  englishName?: string;
+  isPlanet?: true;
+  moons?: Moon[];
+  semimajorAxis?: number;
+  perihelion?: number;
+  aphelion?: number;
+  eccentricity?: number;
+  inclination?: number;
+  mass?: Mass;
+  vol?: Vol;
   density: number;
   gravity: number;
-  escape: number;
+  escape?: number;
   meanRadius: number;
-  equaRadius: number;
-  polarRadius: number;
-  flattening: number;
-  dimension: string;
-  sideralOrbit: number;
-  sideralRotation: number;
+  equaRadius?: number;
+  polarRadius?: number;
+  flattening?: number;
+  dimension?: string;
+  sideralOrbit?: number;
+  sideralRotation?: number;
   aroundPlanet: AroundPlanet;
-  discoveredBy: string;
-  discoveryDate: string;
-  alternativeName: string;
-  axialTilt: number;
+  discoveredBy?: string;
+  discoveryDate?: string;
+  alternativeName?: string;
+  axialTilt?: number;
   avgTemp: number;
-  mainAnomaly: number;
-  argPeriapsis: number;
-  longAscNode: number;
+  mainAnomaly?: number;
+  argPeriapsis?: number;
+  longAscNode?: number;
   bodyType: string;
-  rel: string;
+  rel?: string;
 };
 
 export type Bodies = {

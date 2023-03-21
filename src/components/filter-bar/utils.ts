@@ -30,8 +30,8 @@ export const sortBy = [
     value: "density",
   },
   {
-    name: "Inclination",
-    value: "inclination",
+    name: "Average temp",
+    value: "avgTemp",
   },
   {
     name: "Mean Radius",
